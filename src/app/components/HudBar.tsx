@@ -23,7 +23,7 @@ export const HudBar: React.FC = () => {
     return (
         <div className="w-full" style={{ fontFamily: 'var(--font-heading)' }}>
             {/* XP Bar - Full Width */}
-            <div className="w-full bg-[#111] border-b border-[#2a2a2a] px-3 py-1.5 md:px-4 md:py-2">
+            <div data-tutorial="xp-bar" className="w-full bg-[#111] border-b border-[#2a2a2a] px-3 py-1.5 md:px-4 md:py-2">
                 <div className="flex items-center gap-2 md:gap-3">
                     <Zap className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#a855f7] flex-shrink-0" />
                     <div className="flex-1">

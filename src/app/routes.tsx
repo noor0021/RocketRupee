@@ -8,6 +8,7 @@ import { BottomNav } from './components/BottomNav';
 import { HudBar } from './components/HudBar';
 import { NotFound } from './components/NotFound';
 import { SpaceBackground } from './components/SpaceBackground';
+import { Tutorial } from './components/Tutorial';
 
 import { AnimatePresence, motion } from 'motion/react';
 import { useLocation } from 'react-router';
@@ -41,6 +42,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </AnimatePresence>
         </div>
       </div>
+      <Tutorial />
     </div>
   );
 };

@@ -11,11 +11,11 @@ export const BottomNav: React.FC = () => {
   const isMobile = useMobile();
 
   const navItems = [
-    { path: '/dashboard', icon: Home, label: 'Base', color: '#a855f7' },
-    { path: '/missions', icon: Target, label: 'Quests', color: '#ec4899' },
-    { path: '/simulator', icon: Calculator, label: 'Sim', color: '#06b6d4' },
-    { path: '/leaderboard', icon: Trophy, label: 'Ranks', color: '#f59e0b' },
-    { path: '/profile', icon: User, label: 'Player', color: '#10b981' },
+    { path: '/dashboard', icon: Home, label: 'Base', color: '#a855f7', tutorialId: '' },
+    { path: '/missions', icon: Target, label: 'Quests', color: '#ec4899', tutorialId: 'nav-quests' },
+    { path: '/simulator', icon: Calculator, label: 'Sim', color: '#06b6d4', tutorialId: 'nav-sim' },
+    { path: '/leaderboard', icon: Trophy, label: 'Ranks', color: '#f59e0b', tutorialId: 'nav-ranks' },
+    { path: '/profile', icon: User, label: 'Player', color: '#10b981', tutorialId: 'nav-player' },
   ];
 
   // ─── MOBILE: Bottom Tab Bar ───
@@ -39,6 +39,7 @@ export const BottomNav: React.FC = () => {
               onClick={() => { sfx.navigate(); navigate(item.path); }}
               whileTap={{ scale: 0.85 }}
               className="flex flex-col items-center gap-0.5 py-1.5 px-3 relative"
+              {...(item.tutorialId ? { 'data-tutorial': item.tutorialId } : {})}
             >
               {isActive && (
                 <motion.div
@@ -88,7 +89,7 @@ export const BottomNav: React.FC = () => {
           const isActive = location.pathname === item.path;
 
           return (
-            <div key={item.path} className="relative group">
+            <div key={item.path} className="relative group" {...(item.tutorialId ? { 'data-tutorial': item.tutorialId } : {})}>
               <motion.button
                 onClick={() => { sfx.navigate(); navigate(item.path); }}
                 whileHover={{ scale: 1.1 }}
